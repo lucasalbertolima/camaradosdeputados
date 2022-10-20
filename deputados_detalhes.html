@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="theme-color" content="#0083ef"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Fiscalize - Câmara Legislativa Federal</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="blue-grey lighten-2" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Dados da câmara</a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Detalhes do deputado</h1>
+    </div>
+  </div>
+
+  <div class="container" id="app">
+    <div class="section">
+      <deputado :deputado-id="deputado_id"></deputado>
+      
+      <div class="row" v-cloak>
+        <div class="col s12">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab col s3"><a class="active" href="#tabDespesas">Despesas</a></li>
+            <li class="tab col s3"><a href="#tabProposicoes">Proposições</a></li>
+          </ul>
+        </div>
+        <div id="tabDespesas" class="col s12">
+          <despesas-deputado :deputado-id="deputado_id"></despesas-deputado>
+        </div>
+        <div id="tabProposicoes" class="col s12">
+          <deputado-proposicoes :deputado-id="deputado_id"></deputado-proposicoes>
+        </div>
+      </div>
+    </div>
+    <br><br>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/funcoes.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="https://unpkg.com/vue@2.4.2"></script>
+  <script src="js/card_deputado_id.js"></script>
+  <script src="js/card_despesas.js"></script>
+  <script src="js/card_proposicoes.js"></script>
+  <script src="js/deputados_detalhes.js"></script>
+  </body>
+</html>
